@@ -1,3 +1,5 @@
+//always think about i-1  and i, with for (int i = 1; i < s.Length ; i++)
+
 public class Solution {
 
     Dictionary<char, int>  romanToNumber = new Dictionary<char, int>{
