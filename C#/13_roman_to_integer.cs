@@ -2,7 +2,7 @@
 
 public class Solution {
 
-    private static Dictionary<char, int>  romanToNumber = new Dictionary<char, int>{
+    private Dictionary<char, int>  romanToNumber = new Dictionary<char, int>{
         {'I', 1},
         {'V', 5},
         {'X', 10},
