@@ -1,0 +1,29 @@
+public class Solution {
+    public string LongestPalindrome(string s) {
+        if (s.Length < 1 || s.Length > 1000) {
+            throw new ArgumentException("length of s should be within 1 to 1000");
+        }
+        int possibleLongestLength = s.Length;
+        for (int j = s.Length; j > 0; j--) {
+            for (int i = 0; i <= s.Length - possibleLongestLength; i++) {
+                if(palindromicCheck(s.Substring(i, j))){
+                    return s.Substring(i, j);
+                }
+            }
+            possibleLongestLength--;
+        }
+        throw new Exception("Unknown Error");
+    }
+    
+    bool palindromicCheck(string s) {
+        if (s.Length == 1) {
+            return true;
+        }
+        for(int i = 0; i < s.Length / 2; i++){
+            if (s[i] != s[s.Length - 1 - i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
